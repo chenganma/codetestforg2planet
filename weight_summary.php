@@ -39,18 +39,18 @@ foreach($items as $item){ //run the array fetch from the XML file
   $count = $item['quantity'] + $count;
 }
 
-echo 'Total Devices:'.$count.'<br>';
-echo 'Min Weight:'.min($weight_array).'<br>';
-echo 'Max Weight:'.max($weight_array).'<br>';
+echo 'Total Devices : '.$count.'<br>';
+echo 'Min Weight : '.min($weight_array).'<br>';
+echo 'Max Weight : '.max($weight_array).'<br>';
 $average_weight = $total_devices_weight / $count;
-echo 'Average:'.$average_weight.'<br>';
+echo 'Average : '.$average_weight.'<br>';
 
 foreach($weight_array as $i)
 {
   $var += pow(($i - $average_weight), 2);
 }
 
-echo 'Stddev:'.(float)sqrt($var/$count);
+echo 'Stddev : '.(float)sqrt($var/$count);
 
 ?>
 </body>
