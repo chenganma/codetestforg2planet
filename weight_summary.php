@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<title>Weight Summary</title>
 </head>
 <body>
 
 <?php
 
 /* This is the HTML schema. generate from the xsd file
-
-<?xml version="1.0" encoding="utf-8"?>
-<device-list>
-  <device name="str1234" quantity="745" serial_number="str1234">
-    <weight units="ounces">123.45</weight>
-  </device>
-</device-list>
-
+    <?xml version="1.0" encoding="utf-8"?>
+    <device-list>
+      <device name="str1234" quantity="745" serial_number="str1234">
+        <weight units="ounces">123.45</weight>
+      </device>
+    </device-list>
 */
-
 
 echo '<h2>Weight Summary</h2>';
 
-$items = simplexml_load_file('./example.xml') or die("Error");
+$items = simplexml_load_file('./example.xml') or die("Error"); //get data from the file
 $i = 0;
 $count = 0;
 $var = 0;
@@ -29,7 +26,7 @@ $number = 1;
 $total_devices_weight = 0;
 $one_device_weight = 0;
 
-foreach($items as $item){
+foreach($items as $item){ //run the array fetch from the XML file
   echo 'Item'.$number++.'- Weight (Pound): '.$item->weight.'  //  ';
   $pound = $item->weight;
   $ounces = $pound * 16;

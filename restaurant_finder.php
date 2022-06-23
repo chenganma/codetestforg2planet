@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Restaurant Finder</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val();
     //console.log(value);
-    console.log($("#myTable td").text())
+    //console.log($("#myTable td").text())
     $("#myTable > tr").filter(function() {
         let item = $(this).text().indexOf(value) > -1;
         $(this).toggle(item);        
